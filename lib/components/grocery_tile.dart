@@ -13,7 +13,7 @@ class GroceryTile extends StatelessWidget {
     super.key,
     required this.item,
     this.onComplete,
-  })  : textDecoration =
+  }) : textDecoration =
             item.isComplete ? TextDecoration.lineThrough : TextDecoration.none;
 
   @override

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +24,7 @@ class GroceryItemScreen extends StatefulWidget {
     required this.onUpdate,
     this.originalItem,
     this.index = -1,
-  })  : isUpdating = (originalItem != null);
+  }) : isUpdating = (originalItem != null);
 
   @override
   _GroceryItemScreenState createState() => _GroceryItemScreenState();
@@ -231,7 +233,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             ),
           ],
         ),
-        Text('${DateFormat('yyyy-MM-dd').format(_dueDate)}'),
+        Text(DateFormat('yyyy-MM-dd').format(_dueDate)),
       ],
     );
   }
