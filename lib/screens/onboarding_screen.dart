@@ -1,12 +1,19 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../models/models.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  // TODO: Add OnboardingScreen MaterialPage Helper
-
   const OnboardingScreen({super.key});
+  static MaterialPage page() {
+    return MaterialPage(
+      name: FooderlichPages.onboardingPath,
+      key: ValueKey(FooderlichPages.onboardingPath),
+      child: const OnboardingScreen(),
+    );
+  }
 
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
@@ -20,9 +27,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        title: const Text('Getting Started'),
+        elevation: 0.00,
+        title: const Text('Getting Started sh**'),
         leading: GestureDetector(
           child: const Icon(
             Icons.chevron_left,
@@ -52,7 +60,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         MaterialButton(
           child: const Text('Skip'),
           onPressed: () {
-            // TODO: Onboarding -> Navigate to home
+            Provider.of<AppStateManager>(context, listen: false)
+                .completeOnboarding();
           },
         ),
       ],
@@ -110,6 +119,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       count: 3,
       effect: WormEffect(
         activeDotColor: rwColor,
+        paintStyle: PaintingStyle.fill,
       ),
     );
   }
