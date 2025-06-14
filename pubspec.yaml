@@ -31,7 +31,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   flutter_colorpicker: ^1.1.0
   flutter_lints: ^5.0.0
-  webview_flutter: ^2.0.14
+  webview_flutter: ^4.4.2
 
 dev_dependencies:
   flutter_test:
